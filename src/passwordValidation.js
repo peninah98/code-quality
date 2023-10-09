@@ -7,7 +7,7 @@ export const forbiddenPasswords = ["amG84h6yeQ", "mc9Q20pdjH", "jnT6Q2f8U5"];
  * @returns {boolean}
  */
 export default function isValidPassword(password = "") {
-  if(String(password).match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){10}$/gm) && new Set([...password]).size > 3){
+  if(password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d){10}$/gm) ){
     return true
   }
   else{
