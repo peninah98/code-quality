@@ -20,6 +20,14 @@ export default function isValidPassword(password = "") {
    *   return ...;
    * }
    */
+  if(!password.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/)){
+    return false
+  }
+  else{
+    return true
+  }
+  
+
   const setOfPassword = new Set([...password]);
   if (setOfPassword.size < 4) return false;
   return true;
