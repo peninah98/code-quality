@@ -5,8 +5,8 @@
  */
 
 // FUNCTION 1
-export default function cntRbt(ls) {
- return ls.split("").filter(element=>element=== "R").length
+export default function countingRs(string) {
+ return string.split("").filter(element=>element=== "R").length
   
 }
 
