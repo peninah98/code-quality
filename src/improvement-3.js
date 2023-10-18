@@ -5,9 +5,7 @@
  */
 
 // FUNCTION 3
-const largestNumber = (numbers) => {
-  return Math.max(...numbers)
-}
+const largestNumber = numbers => Math.max(...numbers)
 
 export default largestNumber
 
