@@ -5,6 +5,8 @@
  */
 
 // FUNCTION 2
-export default function processItems(items) { 
+const processItems =(items)=> { 
   return items.filter((item)=> item.type === 'Food')
 }
+
+export default processItems

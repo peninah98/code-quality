@@ -6,11 +6,10 @@
 
 // FUNCTION 3
 const largestNumber = (numbers) => {
-  const largest = Math.max(...numbers);
-  return largest;
-};
+   return Math.max(...numbers)
+}
 
-export default largestNumber;
+export default largestNumber
 
 
 

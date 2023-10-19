@@ -5,15 +5,9 @@
  */
 
 // FUNCTION 1
-export default function cntRbt(ls) {
-  var cnt = 0;
-  let regex = /R/
-  for (var i = 0; i < ls.length; i++) {
-    if ((ls[i]).match(regex)) {
-      cnt++;
-    }
-  }
-  return cnt;
+export default function numberOfR(string) {
+ return string.split("").filter(element=>element=== "R").length
+  
 }
 
 
