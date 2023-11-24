@@ -2,20 +2,24 @@ export const forbiddenPasswords = ["amG84h6yeQ", "mc9Q20pdjH", "jnT6Q2f8U5"];
 
 const isValidPassword = (password) => {
   if (!typeof password === "string") {
-    return String(password.sort((a, b) => a - b))
+    password = String(password);
   }
 
-  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9]{10}$/
-  if (forbiddenPasswords.includes(password)) return false
-  if (!regex.test(password)) return false
-  if (!new Set([...password]).size > 3) return false
-  if (password < 4) return false
-  if (
-    ![...password].every(
-      (char, index, array) => index === 0 || char >= array[index - 1]
-    )
-  )
-    return false
-}
+  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z0-9]{10}$/;
+  if (forbiddenPasswords.includes(password)) return false;
+  if (!regex.test(password)) return false;
+  if (new Set([...password]).size < 4) return false;
+  const arrayOfpassword = password
+    .split("")
+    .filter((elements) => Number(elements))
+    .map((element) => +element);
 
-export default isValidPassword
+  const checkingAscending = arrayOfpassword.some(
+    (char, index, array) =>
+      char + 1 === array[index + 1] || char - 1 === array[index + 1]
+  );
+  if (checkingAscending) return false;
+  return true;
+};
+
+export default isValidPassword;
